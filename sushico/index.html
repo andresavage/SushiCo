@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Newport Sushi Co</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    </head>
+    <body class="homepage is-preload">
+        <!-- Award Popup Modal -->
+        <div id="award-modal" class="award-modal">
+            <div class="award-modal-content">
+                <button class="award-modal-close" onclick="closeAwardModal()" aria-label="Close">×</button>
+                <img src="images/bestofnewport.png" alt="Best of Newport Award" class="award-image">
+                <h2 class="award-title">Thank You, Newport!</h2>
+                <p class="award-text">We're honored to be selected as <strong>2025 Best Food Truck in Newport County</strong> by Newport Life Magazine!</p>
+                <p class="award-text">Thank you to everyone who voted for us. We're grateful for your support!</p>
+                <button class="award-close-button" onclick="closeAwardModal()">Awesome!</button>
+            </div>
+        </div>
+
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li class="social-icons">
+                    <a href="https://www.facebook.com/people/Newport-Sushi-co/61574827383154/" target="_blank" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/newportsushico/" target="_blank" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+            <div class="nav-logo">
+                <a href="index.html"><img src="sushi-logos/NewportSushiCo_Logo-03.png" alt="Newport Sushi Co"></a>
+            </div>
+            <a href="#navPanel" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></a>
+        </nav>
+
+        <div id="page-wrapper">
+            <section id="header">
+            </section>
+
+            <section>
+                        <div style="height: 40px;"></div>
+                        
+                        <!-- Welcome Hero Section -->
+                        <div class="welcome-hero">
+                            <div class="welcome-content">
+                                <h2 class="welcome-title">Fresh Sushi Anywhere</h2>
+                                <p class="welcome-subtitle">Serving Rhode Island and beyond.</p>
+                            </div>
+                        </div>
+
+                        <div style="height: 20px;"></div>
+
+                        <!-- Centered content: CTA boxes + main hero image -->
+                        <div class="home-centered-content">
+                        <!-- Primary CTA Section -->
+                        <div class="primary-cta-section">
+                            <div class="primary-cta-box private-events">
+                                <div class="cta-icon">🎉</div>
+                                <h2 class="primary-cta-heading">Private Event?</h2>
+                                <p class="primary-cta-text">Make your celebration unforgettable. Corporate events, weddings, parties, and more. We bring fresh sushi to you.</p><br>
+                                <a href="mailto:newportsushico@gmail.com?subject=Private Event Inquiry&body=Please include the following in your message:%0D%0A%0D%0A- Event date:%0D%0A- Event location (city%2C state):%0D%0A- Number of guests:%0D%0A- Type of event (e.g. wedding%2C corporate%2C party):%0D%0A- Preferred time or timeframe:%0D%0A- Any dietary needs or special requests:%0D%0A%0D%0AWe'll respond with availability and pricing." class="primary-cta-button">Get Started</a>
+                            </div>
+                            
+                            <div class="primary-cta-box schedule">
+                                <div class="cta-icon">📍</div>
+                                <h2 class="primary-cta-heading">Check Our Schedule</h2>
+                                <p class="primary-cta-text">Find out where we're serving next. Follow us around Newport and Rhode Island.</p><br>
+                                <a href="schedule.html" class="primary-cta-button">View Schedule</a>
+                            </div>
+                            
+                            <div class="primary-cta-box menu">
+                                <div class="cta-icon">🍣</div>
+                                <h2 class="primary-cta-heading">Food <br> Menu</h2>
+                                <p class="primary-cta-text">Explore our fresh selection of sushi rolls, handrolls, and specialty items. Made fresh daily with premium ingredients.</p><br>
+                                <a href="menu.html" class="primary-cta-button">View Menu</a>
+                            </div>
+                        </div>
+
+                        <div style="height: 60px;"></div>
+
+                        <!-- Main Hero Image - Food Focus -->
+                        <div class="main-hero-image">
+                            <img src="images/IMG_1262.jpg" alt="Fresh Sushi" class="hero-main-img">
+                        </div>
+                        </div>
+
+                        <div style="height: 60px;"></div>
+
+                        <!-- Image Gallery Showcase (angles animate with scroll) -->
+                        <div class="showcase-gallery" id="showcase-gallery">
+                            <div class="showcase-item stack-item-1">
+                                <img src="images/IMG_0181.jpg" alt="Newport Sushi Co Food" class="showcase-image">
+                            </div>
+                            <div class="showcase-item stack-item-2">
+                                <img src="images/IMG_0462.jpeg" alt="Newport Sushi Co Food" class="showcase-image">
+                            </div>
+                            <div class="showcase-item stack-item-3">
+                                <img src="images/IMG_3029.jpg" alt="Newport Sushi Co Food" class="showcase-image">
+                            </div>
+                        </div>
+
+                        <div style="height: 60px;"></div>
+
+                        <!-- Instagram Embed -->
+                        <div class="social-section" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5em; text-align: center; display: flex; flex-direction: column; align-items: center;">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/newportsushico/" data-instgrm-version="14" style="display: block; margin: 0 auto;"></blockquote>
+                            <script async src="https://www.instagram.com/embed.js"></script>
+                        </div>
+            </section>
+        </div>
+
+        <div class="floating-buttons">
+            <a href="schedule.html" class="floating-button">Schedule</a>
+            <a href="menu.html" class="floating-button">Menu</a>
+        </div>
+
+        <script>
+            // Check if user has already seen the award modal
+            function hasSeenAwardModal() {
+                return localStorage.getItem('newportSushiAwardSeen') === 'true';
+            }
+
+            // Mark award modal as seen
+            function markAwardModalSeen() {
+                localStorage.setItem('newportSushiAwardSeen', 'true');
+            }
+
+            // Show award modal on page load (only if not seen before)
+            window.addEventListener('DOMContentLoaded', function() {
+                if (!hasSeenAwardModal()) {
+                    var modal = document.getElementById('award-modal');
+                    if (modal) {
+                        modal.style.display = 'flex';
+                        document.body.classList.add('modal-open');
+                    }
+                }
+            });
+
+            function closeAwardModal() {
+                var modal = document.getElementById('award-modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.classList.remove('modal-open');
+                    markAwardModalSeen();
+                }
+            }
+
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                var modal = document.getElementById('award-modal');
+                if (event.target === modal) {
+                    closeAwardModal();
+                }
+            });
+
+            // Photo stack: start spread/angled, join into stack as user scrolls down
+            (function() {
+                var gallery = document.getElementById('showcase-gallery');
+                if (!gallery) return;
+                var items = [
+                    gallery.querySelector('.stack-item-1'),
+                    gallery.querySelector('.stack-item-2'),
+                    gallery.querySelector('.stack-item-3')
+                ].filter(Boolean);
+                if (items.length !== 3) return;
+
+                // Start state (progress 0): more rotation and spread apart
+                var start = [
+                    { tx: -90, ty: 50, rot: -18 },
+                    { tx: 0, ty: -100, rot: 14 },
+                    { tx: 90, ty: 60, rot: -16 }
+                ];
+                // End state (progress 1): stacked. On mobile, third image tucks further under the one above.
+                function getEndState() {
+                    var mobile = window.innerWidth < 768;
+                    return [
+                        { tx: 0, ty: 0, rot: -3 },
+                        { tx: 0, ty: -20, rot: 2 },
+                        { tx: 0, ty: mobile ? -55 : -15, rot: -1.5 }
+                    ];
+                }
+
+                function lerp(a, b, t) { return a + (b - a) * t; }
+
+                function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+                function updateStack() {
+                    var rect = gallery.getBoundingClientRect();
+                    var vh = window.innerHeight;
+                    var end = getEndState();
+                    // progress 0 when section is below view (top > 70% of viewport), 1 when section has entered (top < 25% of viewport)
+                    var progress = rect.top > vh * 0.7 ? 0 : rect.top < vh * 0.25 ? 1 : 1 - (rect.top - vh * 0.25) / (vh * 0.45);
+                    progress = clamp(progress, 0, 1);
+
+                    items.forEach(function(el, i) {
+                        var tx = lerp(start[i].tx, end[i].tx, progress);
+                        var ty = lerp(start[i].ty, end[i].ty, progress);
+                        var rot = lerp(start[i].rot, end[i].rot, progress);
+                        el.style.transform = 'translate(' + tx + 'px, ' + ty + 'px) rotate(' + rot + 'deg)';
+                    });
+                }
+
+                window.addEventListener('scroll', updateStack, { passive: true });
+                window.addEventListener('resize', updateStack);
+                updateStack();
+            })();
+        </script>
+        <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.dropotron.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+
+
+    </body>
+</html>

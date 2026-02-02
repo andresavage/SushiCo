@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Newport Sushi Co</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+	</head>
+
+	<body class="homepage is-preload">
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="current"><a href="schedule.html">Schedule</a></li>
+				<li><a href="menu.html">Menu</a></li>
+				<li class="social-icons">
+					<a href="https://www.facebook.com/people/Newport-Sushi-co/61574827383154/" target="_blank" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/newportsushico/" target="_blank" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+				</li>
+			</ul>
+			<div class="nav-logo">
+				<a href="index.html"><img src="sushi-logos/NewportSushiCo_Logo-03.png" alt="Newport Sushi Co"></a>
+			</div>
+			<a href="#navPanel" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></a>
+		</nav>
+
+		<div id="page-wrapper">
+			<section id="header">
+			</section>
+
+			<section>
+				<div style="height: 40px;"></div>
+
+				<div class="simple-menu">
+					<div class="menu-section">
+						<h2 class="menu-category">UPCOMING APPEARANCES</h2>
+						
+						<!-- Copy this block to add a new date. Use Month DD, YYYY for the date; venue name in strong; location on next line; time in em. -->
+						<!--
+						<div class="menu-item">
+							<div class="menu-item-name">January 16, 2026 <span class="menu-item-price"></span></div>
+							<div class="menu-item-description"><strong>Narragansett Brewery PVD</strong><br>271 Tockwotton St. Providence RI 02903<br><em>04:30pm - 10:30PM</em></div>
+						</div>
+						-->
+
+						<div class="menu-item schedule-empty">
+							<div class="menu-item-description" style="text-align: center; font-style: italic;">No upcoming dates at the moment. Check back soon!</div>
+						</div>
+					</div>
+				</div>
+
+				<div style="height: 40px;"></div>
+
+				<div style="text-align: center; padding: 0 2em; max-width: 800px; margin: 0 auto; font-family: 'Nitti Regular', sans-serif;"><em>All dates and times are subject to change</em></div>
+			</section>
+		</div>
+
+		<div class="floating-buttons">
+            <a href="index.html" class="floating-button">Home</a>
+            <a href="menu.html" class="floating-button">Menu</a>
+        </div>
+	
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var menuItems = document.querySelectorAll('.menu-item');
+				var today = new Date();
+				today.setHours(0, 0, 0, 0);
+				
+				var monthNames = {
+					'january': 0, 'february': 1, 'march': 2, 'april': 3,
+					'may': 4, 'june': 5, 'july': 6, 'august': 7,
+					'september': 8, 'october': 9, 'november': 10, 'december': 11
+				};
+				
+				for (var i = 0; i < menuItems.length; i++) {
+					var item = menuItems[i];
+					var nameElement = item.querySelector('.menu-item-name');
+					if (!nameElement) continue;
+					
+					var dateText = nameElement.textContent.trim();
+					var parts = dateText.split(',');
+					if (parts.length !== 2) continue;
+					
+					var monthDay = parts[0].trim().split(' ');
+					var year = parseInt(parts[1].trim(), 10);
+					var monthName = monthDay[0].toLowerCase();
+					var day = parseInt(monthDay[1], 10);
+					
+					if (!monthNames.hasOwnProperty(monthName) || isNaN(day) || isNaN(year)) continue;
+					
+					var month = monthNames[monthName];
+					var eventDate = new Date(year, month, day);
+					eventDate.setHours(0, 0, 0, 0);
+					
+					if (eventDate < today) {
+						item.parentNode.removeChild(item);
+					}
+				}
+			});
+			</script>
+
+	</body>
+</html>

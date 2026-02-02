@@ -1,0 +1,65 @@
+{
+  "menu": [
+    {
+      "category": "Sushi/Handrolls",
+      "items": [
+        {
+          "name": "WICKED TUNA",
+          "price": "$12/$7",
+          "description": "MANGO, CUCUMBER, SPICY MAYO, EEL SAUCE, FURIKAKE"
+        },
+        {
+          "name": "SHRIMP TEMPURA",
+          "price": "$12/$7",
+          "description": "MISO HONEY, COCONUT, AVOCADO, SCALLION, SIRACHA"
+        },
+        {
+          "name": "ORA KING SALMON PHILLY",
+          "price": "$12/$7",
+          "description": "CUCUMBER, AVOCADO, CHILI PONZU, CREAM CHEESE"
+        },
+        {
+          "name": "KOREAN FRIED CHICKEN",
+          "price": "$14/$9",
+          "description": "GOCHUJANG, CUCUMBER, KIMCHI MAYO, SCALLION"
+        },
+        {
+          "name": "BLUE CRAB CALI",
+          "price": "$12/$7",
+          "description": "AVOCADO, CUCUMBER, SPICY MAYO, EEL SAUCE, SESAME SEED"
+        },
+        {
+          "name": "SWEET POTATO",
+          "price": "$10/$5",
+          "description": "AVOCADO, MAPLE-SOY, SCALLION, TEMPURA CRUNCH"
+        }
+      ]
+    },
+    {
+      "category": "Snacks",
+      "items": [
+        {
+          "name": "TEMPURA EGGPLANT FRIES",
+          "price": "$8",
+          "description": "YUZU YOGURT, CHILI PONZU, SCALLION, FURIKAKE"
+        },
+        {
+          "name": "CRISPY BRUSSELS",
+          "price": "$8",
+          "description": "CHILI PONZU, SESAME SEED, SCALLION"
+        },
+        {
+          "name": "TUNA CRISPY RICE",
+          "price": "$12",
+          "description": "AVOCADO, SPICY MAYO, EEL SUACE, FURIKAKE"
+        },
+        {
+          "name": "KARAAGE CHICKEN",
+          "price": "$10",
+          "description": "SPICY MAYO, FURIKAKE, SCALLION, CHILI OIL, LEMON"
+        }
+      ]
+    }
+  ],
+  "disclaimer": "***Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness***"
+}
