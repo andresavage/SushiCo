@@ -10,44 +10,23 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 		<style>
-		/* Schedule page: inline so calendar works even when main.css is cached */
-		.schedule-section .schedule-wrap { max-width: 960px; }
-		.schedule-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1em; margin-bottom: 1em; }
-		.schedule-header .menu-category { margin-bottom: 0; border-bottom: none; }
-		.schedule-view-toggle { display: flex; gap: 0; font-family: 'DM Sans', -apple-system, sans-serif; }
-		.schedule-tab { font-family: 'DM Sans', -apple-system, sans-serif; font-size: 0.95rem; font-weight: 700; padding: 0.5em 1em; border: 1px solid #555; background: #e5e5e5; color: #1a1a1a; cursor: pointer; transition: background 0.2s, color 0.2s; }
-		.schedule-tab:first-child { border-right-width: 0; border-radius: 4px 0 0 4px; }
-		.schedule-tab:last-child { border-radius: 0 4px 4px 0; }
-		.schedule-tab:hover { background: #d0d0d0; color: #000; }
-		.schedule-tab.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
-		.schedule-view { display: block; }
-		.schedule-view:not(.active) { display: none !important; }
+		/* Schedule page: list view only, secondary font (DM Sans) throughout. Yule reserved for H1 elsewhere. */
+		.schedule-section .schedule-wrap { max-width: 800px; margin: 0 auto; padding: 0 2em; }
+		.schedule-section .schedule-heading { font-family: 'DM Sans', -apple-system, sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 1.25em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd; }
 		.schedule-disclaimer { text-align: center; padding: 0 2em; max-width: 800px; margin: 0 auto; font-family: 'DM Sans', -apple-system, sans-serif; font-size: 0.9rem; color: #666; }
 		.schedule-empty { text-align: center; font-style: italic; font-family: 'DM Sans', -apple-system, sans-serif; color: #666; padding: 2em 1em; }
-		.schedule-list-item { font-family: 'DM Sans', -apple-system, sans-serif; margin-bottom: 1.5em; padding-bottom: 1.2em; border-bottom: 1px solid #eee; }
-		.schedule-list-item:last-child { border-bottom: none; }
-		.schedule-list-date { font-size: 1rem; font-weight: 600; color: #1a1a1a; letter-spacing: 0.02em; margin-bottom: 0.35em; }
-		.schedule-list-desc { font-size: 0.95rem; font-weight: 400; color: #555; line-height: 1.5; }
-		.schedule-list-desc strong { color: #333; font-weight: 600; }
-		.schedule-list-desc em { color: #666; font-size: 0.92em; }
-		.schedule-calendar-month { margin-bottom: 2.5em; }
-		.schedule-calendar-month:last-child { margin-bottom: 0; }
-		.schedule-calendar-month-title { font-family: 'P22 Yule W01 Heavy Regular', 'Cinzel', serif; font-size: 1.1em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 0.75em; padding-bottom: 0.4em; border-bottom: 1px solid #ddd; }
-		.schedule-calendar-grid { display: grid !important; grid-template-columns: repeat(7, 1fr) !important; gap: 1px; background: #ddd; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
-		.schedule-calendar-cell { font-family: 'DM Sans', -apple-system, sans-serif; background: #fff; padding: 0.5em; min-height: 3.5em; font-size: 0.85rem; box-sizing: border-box; }
-		.schedule-calendar-head { background: #f0f0f0; font-weight: 600; color: #444; text-align: center; padding: 0.5em 0.25em; }
-		.schedule-calendar-cell-empty { background: #fafafa; }
-		.schedule-calendar-day { vertical-align: top; }
-		.schedule-calendar-day-num { font-weight: 600; color: #333; margin-bottom: 0.25em; font-size: 0.95rem; }
-		.schedule-calendar-event { font-size: 0.8rem; color: #555; padding: 0.2em 0; border-top: 1px solid #f0f0f0; margin-top: 0.2em; line-height: 1.35; }
-		.schedule-calendar-event-venue { display: block; font-weight: 500; color: #333; }
-		.schedule-calendar-event-time { display: block; color: #666; font-size: 0.9em; }
-		@media (max-width: 768px) {
-			.schedule-header { flex-direction: column; align-items: flex-start; }
-			.schedule-calendar-grid { grid-template-columns: repeat(7, minmax(0, 1fr)) !important; }
-			.schedule-calendar-cell { min-height: 2.5em; padding: 0.35em; font-size: 0.75rem; }
-			.schedule-calendar-event-venue, .schedule-calendar-event-time { font-size: 0.7rem; }
-		}
+		.schedule-list-item { font-family: 'DM Sans', -apple-system, sans-serif; margin-bottom: 1.75em; padding-bottom: 1.25em; border-bottom: 1px solid #e8e8e8; }
+		.schedule-list-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+		.schedule-list-date { font-size: 1.05rem; font-weight: 700; color: #1a1a1a; letter-spacing: 0.02em; margin-bottom: 0.4em; }
+		.schedule-list-desc { font-size: 0.95rem; font-weight: 400; color: #444; line-height: 1.55; }
+		.schedule-list-desc strong { font-family: 'DM Sans', -apple-system, sans-serif; font-weight: 700; color: #1a1a1a; }
+		.schedule-list-desc em { color: #555; font-size: 0.9em; }
+		/* Calendar view commented out
+		.schedule-view-toggle { display: flex; gap: 0; }
+		.schedule-tab { ... }
+		.schedule-calendar-grid { display: grid !important; ... }
+		.schedule-calendar-cell { ... }
+		*/
 		</style>
 	</head>
 
@@ -77,15 +56,12 @@
 
 				<div class="simple-menu schedule-wrap">
 					<div class="menu-section">
-						<div class="schedule-header">
-							<h2 class="menu-category">UPCOMING APPEARANCES</h2>
-							<div class="schedule-view-toggle" role="tablist" aria-label="View mode">
-								<button type="button" class="schedule-tab" data-view="list" aria-selected="false">List</button>
-								<button type="button" class="schedule-tab active" data-view="calendar" aria-selected="true">Calendar</button>
-							</div>
-						</div>
-						<div id="schedule-list" class="schedule-view schedule-view-list" hidden></div>
-						<div id="schedule-calendar" class="schedule-view schedule-view-calendar active"></div>
+						<h2 class="schedule-heading">Upcoming appearances</h2>
+						<div id="schedule-list"></div>
+						<!-- Calendar view commented out
+						<div class="schedule-view-toggle">...List / Calendar buttons...</div>
+						<div id="schedule-calendar">...</div>
+						-->
 					</div>
 				</div>
 
@@ -132,8 +108,6 @@
 			<script>
 			(function() {
 				var MONTH_NAMES = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5, july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 };
-				var MONTH_LABELS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-				var DAY_LABELS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
 				function escapeHtml(s) {
 					if (s == null || s === '') return '';
@@ -157,10 +131,6 @@
 					return d;
 				}
 
-				function daysInMonth(y, m) {
-					return new Date(y, m + 1, 0).getDate();
-				}
-
 				function renderList(upcoming, listEl) {
 					if (!listEl) return;
 					if (upcoming.length === 0) {
@@ -179,75 +149,9 @@
 					}).join('');
 				}
 
-				function renderCalendar(upcoming, calEl) {
-					if (!calEl) return;
-					if (upcoming.length === 0) {
-						calEl.innerHTML = '<div class="schedule-empty">No upcoming dates at the moment. Check back soon!</div>';
-						calEl.hidden = false;
-						return;
-					}
-					var eventsByKey = {};
-					var months = [];
-					upcoming.forEach(function(e) {
-						var d = parseDate(e.date);
-						if (!d) return;
-						var key = d.getFullYear() + '-' + d.getMonth();
-						if (!eventsByKey[key]) {
-							eventsByKey[key] = [];
-							months.push({ year: d.getFullYear(), month: d.getMonth() });
-						}
-						eventsByKey[key].push({ date: d, event: e });
-					});
-					months.sort(function(a, b) {
-						if (a.year !== b.year) return a.year - b.year;
-						return a.month - b.month;
-					});
-
-					var html = '';
-					months.forEach(function(m) {
-						var key = m.year + '-' + m.month;
-						var events = eventsByKey[key] || [];
-						var first = new Date(m.year, m.month, 1);
-						var startPad = first.getDay();
-						var days = daysInMonth(m.year, m.month);
-
-						html += '<div class="schedule-calendar-month">';
-						html += '<h3 class="schedule-calendar-month-title">' + escapeHtml(MONTH_LABELS[m.month] + ' ' + m.year) + '</h3>';
-						html += '<div class="schedule-calendar-grid" role="grid">';
-						DAY_LABELS.forEach(function(label) {
-							html += '<div class="schedule-calendar-cell schedule-calendar-head">' + label + '</div>';
-						});
-						var cellCount = startPad + days;
-						var rows = Math.ceil(cellCount / 7);
-						var totalCells = rows * 7;
-						var eventsByDay = {};
-						events.forEach(function(o) {
-							var day = o.date.getDate();
-							if (!eventsByDay[day]) eventsByDay[day] = [];
-							eventsByDay[day].push(o.event);
-						});
-						for (var i = 0; i < totalCells; i++) {
-							var isEmpty = i < startPad || i >= startPad + days;
-							var dayNum = isEmpty ? '' : (i - startPad + 1);
-							var dayEvents = eventsByDay[dayNum] || [];
-							var cellClass = 'schedule-calendar-cell';
-							if (isEmpty) cellClass += ' schedule-calendar-cell-empty';
-							else cellClass += ' schedule-calendar-day';
-							html += '<div class="' + cellClass + '">';
-							if (dayNum !== '') html += '<div class="schedule-calendar-day-num">' + dayNum + '</div>';
-							dayEvents.forEach(function(ev) {
-								html += '<div class="schedule-calendar-event">' +
-									'<span class="schedule-calendar-event-venue">' + escapeHtml(ev.venue || '') + '</span>' +
-									'<span class="schedule-calendar-event-time">' + escapeHtml(ev.time || '') + '</span>' +
-									'</div>';
-							});
-							html += '</div>';
-						}
-						html += '</div></div>';
-					});
-					calEl.innerHTML = html;
-					calEl.hidden = false;
-				}
+				/* Calendar view commented out
+				function renderCalendar(upcoming, calEl) { ... }
+				*/
 
 				function run() {
 					var el = document.getElementById('schedule-data');
@@ -255,7 +159,6 @@
 					if (el && el.textContent) {
 						try { data = JSON.parse(el.textContent); } catch (e) {}
 					}
-
 					var today = new Date();
 					today.setHours(0, 0, 0, 0);
 					var list = Array.isArray(data) ? data : [];
@@ -265,29 +168,7 @@
 						var eventDate = parseDate(e.date);
 						return eventDate && eventDate >= today;
 					});
-
-					var listContainer = document.getElementById('schedule-list');
-					var calContainer = document.getElementById('schedule-calendar');
-					renderList(upcoming, listContainer);
-					renderCalendar(upcoming, calContainer);
-
-					document.querySelectorAll('.schedule-tab').forEach(function(btn) {
-						btn.addEventListener('click', function() {
-							var view = this.getAttribute('data-view');
-							document.querySelectorAll('.schedule-tab').forEach(function(b) {
-								b.classList.toggle('active', b.getAttribute('data-view') === view);
-								b.setAttribute('aria-selected', b.getAttribute('data-view') === view ? 'true' : 'false');
-							});
-							listContainer.classList.toggle('active', view === 'list');
-							calContainer.classList.toggle('active', view === 'calendar');
-							listContainer.hidden = view !== 'list';
-							calContainer.hidden = view !== 'calendar';
-						});
-					});
-					listContainer.hidden = true;
-					listContainer.classList.remove('active');
-					calContainer.hidden = false;
-					calContainer.classList.add('active');
+					renderList(upcoming, document.getElementById('schedule-list'));
 				}
 
 				if (document.readyState === 'loading') {
