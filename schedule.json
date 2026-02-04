@@ -1,1 +1,21 @@
- []
+[
+  {
+    "_example": true,
+    "date": "Month DD, YYYY",
+    "venue": "Venue Name",
+    "location": "Address or leave empty",
+    "time": "4pm–8pm"
+  },
+  { "date": "June 24, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "3pm–8pm" },
+  { "date": "June 28, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "3pm–8pm" },
+  { "date": "July 7, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "4pm–8pm" },
+  { "date": "July 12, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "4pm–8pm" },
+  { "date": "July 14, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "4pm–8pm" },
+  { "date": "July 21, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "4pm–8pm" },
+  { "date": "July 26, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "4pm–8pm" },
+  { "date": "August 4, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "4pm–8pm" },
+  { "date": "August 9, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "2pm–6pm" },
+  { "date": "August 18, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "4pm–8pm" },
+  { "date": "August 19, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "3pm–8pm" },
+  { "date": "August 23, 2026", "venue": "Ragged Island Brewing", "location": "54 Bristol Ferry Rd., Portsmouth, RI 02871", "time": "12pm–6pm" }
+]

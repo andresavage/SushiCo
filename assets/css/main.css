@@ -3864,6 +3864,200 @@ body.modal-open {
 	font-family: 'Cinzel', serif !important;
 }
 
+/* Schedule page: list / calendar views + DM Sans */
+.schedule-section .schedule-wrap {
+	max-width: 960px;
+}
+.schedule-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1em;
+	margin-bottom: 1em;
+}
+.schedule-header .menu-category {
+	margin-bottom: 0;
+	border-bottom: none;
+}
+.schedule-view-toggle {
+	display: flex;
+	gap: 0;
+	font-family: 'DM Sans', -apple-system, sans-serif;
+}
+.schedule-tab {
+	font-family: 'DM Sans', -apple-system, sans-serif;
+	font-size: 0.95rem;
+	font-weight: 700;
+	padding: 0.5em 1em;
+	border: 1px solid #555;
+	background: #e5e5e5;
+	color: #1a1a1a;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+.schedule-tab:first-child {
+	border-right-width: 0;
+	border-radius: 4px 0 0 4px;
+}
+.schedule-tab:last-child {
+	border-radius: 0 4px 4px 0;
+}
+.schedule-tab:hover {
+	background: #d0d0d0;
+	color: #000;
+}
+.schedule-tab.active {
+	background: var(--vintage-black, #1a1a1a);
+	color: #fff;
+	border-color: var(--vintage-black, #1a1a1a);
+}
+.schedule-view {
+	display: block;
+}
+.schedule-view:not(.active) {
+	display: none !important;
+}
+.schedule-disclaimer {
+	text-align: center;
+	padding: 0 2em;
+	max-width: 800px;
+	margin: 0 auto;
+	font-family: 'DM Sans', -apple-system, sans-serif;
+	font-size: 0.9rem;
+	color: #666;
+}
+.schedule-empty {
+	text-align: center;
+	font-style: italic;
+	font-family: 'DM Sans', -apple-system, sans-serif;
+	color: #666;
+	padding: 2em 1em;
+}
+
+/* List view - DM Sans */
+.schedule-list-item {
+	font-family: 'DM Sans', -apple-system, sans-serif;
+	margin-bottom: 1.5em;
+	padding-bottom: 1.2em;
+	border-bottom: 1px solid #eee;
+}
+.schedule-list-item:last-child {
+	border-bottom: none;
+}
+.schedule-list-date {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--vintage-black, #1a1a1a);
+	letter-spacing: 0.02em;
+	margin-bottom: 0.35em;
+}
+.schedule-list-desc {
+	font-size: 0.95rem;
+	font-weight: 400;
+	color: #555;
+	line-height: 1.5;
+}
+.schedule-list-desc strong {
+	color: #333;
+	font-weight: 600;
+}
+.schedule-list-desc em {
+	color: #666;
+	font-size: 0.92em;
+}
+
+/* Calendar grid - DM Sans */
+.schedule-calendar-month {
+	margin-bottom: 2.5em;
+}
+.schedule-calendar-month:last-child {
+	margin-bottom: 0;
+}
+.schedule-calendar-month-title {
+	font-family: 'P22 Yule W01 Heavy Regular', 'Cinzel', serif;
+	font-size: 1.1em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--vintage-black, #1a1a1a);
+	margin-bottom: 0.75em;
+	padding-bottom: 0.4em;
+	border-bottom: 1px solid #ddd;
+}
+.schedule-calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 1px;
+	background: #ddd;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.schedule-calendar-cell {
+	font-family: 'DM Sans', -apple-system, sans-serif;
+	background: #fff;
+	padding: 0.5em;
+	min-height: 3.5em;
+	font-size: 0.85rem;
+}
+.schedule-calendar-head {
+	background: #f0f0f0;
+	font-weight: 600;
+	color: #444;
+	text-align: center;
+	padding: 0.5em 0.25em;
+}
+.schedule-calendar-cell-empty {
+	background: #fafafa;
+}
+.schedule-calendar-day {
+	vertical-align: top;
+}
+.schedule-calendar-day-num {
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 0.25em;
+	font-size: 0.95rem;
+}
+.schedule-calendar-event {
+	font-size: 0.8rem;
+	color: #555;
+	padding: 0.2em 0;
+	border-top: 1px solid #f0f0f0;
+	margin-top: 0.2em;
+	line-height: 1.35;
+}
+.schedule-calendar-event-venue {
+	display: block;
+	font-weight: 500;
+	color: #333;
+}
+.schedule-calendar-event-time {
+	display: block;
+	color: #666;
+	font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+	.schedule-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.schedule-calendar-grid {
+		grid-template-columns: repeat(7, minmax(0, 1fr));
+	}
+	.schedule-calendar-cell {
+		min-height: 2.5em;
+		padding: 0.35em;
+		font-size: 0.75rem;
+	}
+	.schedule-calendar-event-venue,
+	.schedule-calendar-event-time {
+		font-size: 0.7rem;
+	}
+}
+
 /* ============================================
    RESPONSIVE DESIGN - PC to Phone
    ============================================ */
