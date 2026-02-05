@@ -4349,9 +4349,10 @@ body.modal-open {
 	}
 	
 	#nav {
-		margin: 1em 0 0 0 !important;
+		margin: 0 !important;
+		top: 0 !important;
 	}
-	
+
 	#nav > ul {
 		flex-direction: column !important;
 		gap: 0.5em !important;
@@ -4399,9 +4400,14 @@ body.modal-open {
 		justify-content: space-between !important;
 		align-items: center !important;
 		padding: 0.75em 1em !important;
+		padding-top: calc(0.75em + env(safe-area-inset-top, 0px)) !important;
 		flex-wrap: nowrap !important;
 		min-height: 60px !important;
 		transition: transform 0.3s ease !important;
+		top: 0 !important;
+		left: 0 !important;
+		right: 0 !important;
+		margin: 0 !important;
 	}
 	
 	#nav > ul {
