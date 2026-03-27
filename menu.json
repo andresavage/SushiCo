@@ -1,37 +1,42 @@
 {
   "menu": [
     {
-      "category": "Sushi/Handrolls",
+      "category": "Rolls",
       "items": [
         {
-          "name": "WICKED TUNA",
-          "price": "$12/$7",
-          "description": "MANGO, CUCUMBER, SPICY MAYO, EEL SAUCE, FURIKAKE"
+          "name": "WICKED LOCAL TUNA",
+          "price": "$15",
+          "description": "SPICY MAYO, CUCUMBER, SOY GLAZE, FURIKAKE, SCALLION"
         },
         {
           "name": "SHRIMP TEMPURA",
-          "price": "$12/$7",
-          "description": "MISO HONEY, COCONUT, AVOCADO, SCALLION, SIRACHA"
+          "price": "$14",
+          "description": "MISO-HONEY, COCONUT, AVOCADO, SRIRACHA, SCALLION"
         },
         {
           "name": "ORA KING SALMON PHILLY",
-          "price": "$12/$7",
-          "description": "CUCUMBER, AVOCADO, CHILI PONZU, CREAM CHEESE"
+          "price": "$14",
+          "description": "CUCUMBER, AVOCADO, CREAM CHEESE, SOY GLAZE, SESAME"
         },
         {
-          "name": "KOREAN FRIED CHICKEN",
-          "price": "$14/$9",
-          "description": "GOCHUJANG, CUCUMBER, KIMCHI MAYO, SCALLION"
+          "name": "JONAH CRAB CALI",
+          "price": "$15",
+          "description": "YUZU MAYO, CUCUMBER, AVOCADO, SOY GLAZE, FURIKAKE"
         },
         {
-          "name": "BLUE CRAB CALI",
-          "price": "$12/$7",
-          "description": "AVOCADO, CUCUMBER, SPICY MAYO, EEL SAUCE, SESAME SEED"
+          "name": "KARAAGE CHICKEN",
+          "price": "$15",
+          "description": "SPICY MAYO, CHILI OIL, CUCUMBER, SCALLION, FURIKAKE"
         },
         {
-          "name": "SWEET POTATO",
-          "price": "$10/$5",
-          "description": "AVOCADO, MAPLE-SOY, SCALLION, TEMPURA CRUNCH"
+          "name": "AVOCADO ROLL",
+          "price": "$12",
+          "description": "CUCUMBER, SOY GLAZE, SPICY MAYO, SESAME SCALLION"
+        },
+        {
+          "name": "SWEET POTATO TEMPURA",
+          "price": "$12",
+          "description": "SOY GLAZE, SPICY MAYO, AVOCADO, SCALLION, SESAME"
         }
       ]
     },
@@ -39,24 +44,19 @@
       "category": "Snacks",
       "items": [
         {
-          "name": "TEMPURA EGGPLANT FRIES",
+          "name": "CUCUMBER SALAD",
           "price": "$8",
-          "description": "YUZU YOGURT, CHILI PONZU, SCALLION, FURIKAKE"
+          "description": "NAPA CABBAGE, SCALLION, CHILI OIL VINAIGRETTE, SESAME"
         },
         {
-          "name": "CRISPY BRUSSELS",
+          "name": "FURIKAKE FRIES",
           "price": "$8",
-          "description": "CHILI PONZU, SESAME SEED, SCALLION"
-        },
-        {
-          "name": "TUNA CRISPY RICE",
-          "price": "$12",
-          "description": "AVOCADO, SPICY MAYO, EEL SUACE, FURIKAKE"
+          "description": "SPICY MAYO, SOY GLAZE, SCALLION, BONITO FLAKES"
         },
         {
           "name": "KARAAGE CHICKEN",
-          "price": "$10",
-          "description": "SPICY MAYO, FURIKAKE, SCALLION, CHILI OIL, LEMON"
+          "price": "$12",
+          "description": "SPICY MAYO, CHILI OIL, LEMON, FURIKAKE SCALLION"
         }
       ]
     }
