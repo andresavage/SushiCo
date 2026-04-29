@@ -11,7 +11,7 @@ JSON_PATH = "schedule.json"
 def main():
     with open(JSON_PATH, "r", encoding="utf-8") as f:
         data = json.load(f)
-    json_str = json.dumps(data, indent=2)
+    json_str = json.dumps(data, indent=2, ensure_ascii=False)
 
     with open(HTML_PATH, "r", encoding="utf-8") as f:
         html = f.read()
