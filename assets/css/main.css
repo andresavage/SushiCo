@@ -3967,6 +3967,18 @@ body.modal-open {
 	display: block;
 }
 
+.snacks-special-badge {
+	float: right;
+	width: 128px;
+	margin: -3.6em 0 0.9em 1.1em;
+}
+
+.snacks-special-badge img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
 .menu-category {
 	font-family: 'P22 Yule W01 Heavy Regular', 'Cinzel', serif;
 	font-size: 1.2em;
@@ -3980,6 +3992,74 @@ body.modal-open {
 	text-align: left;
 }
 
+.menu-category-rolls-title {
+	border-bottom: none;
+	margin-bottom: 0.15em;
+	padding-bottom: 0;
+}
+
+.menu-piece-lines {
+	display: grid;
+	grid-template-columns: max-content max-content max-content;
+	column-gap: 0.4em;
+	justify-content: start;
+	align-items: start;
+	margin-bottom: 0.5em;
+}
+
+.menu-piece-line {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.menu-piece-separator {
+	font-family: 'P22 Yule W01 Heavy Regular', 'Cinzel', serif;
+	font-size: 2.1em;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--vintage-black);
+	align-self: center;
+	margin-right: 0.12em;
+}
+
+.menu-piece-top {
+	display: flex;
+	align-items: center;
+	gap: 0.35em;
+	font-family: 'P22 Yule W01 Heavy Regular', 'Cinzel', serif !important;
+	font-size: 1.2em !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.1em !important;
+	text-transform: uppercase !important;
+	color: var(--vintage-black) !important;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 1.15;
+}
+
+.menu-piece-sub {
+	font-family: 'Nitti Regular', sans-serif;
+	font-size: 0.82em;
+	letter-spacing: 0.02em;
+	line-height: 1.2;
+	margin-top: 0.08em;
+	color: #555;
+}
+
+.menu-piece-top img {
+	width: 1.9em;
+	height: 1.9em;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.menu-category-divider {
+	border-bottom: 1px solid #ddd;
+	margin: 0 0 0.95em;
+}
+
 .menu-category-description {
 	font-family: 'Nitti Regular', sans-serif;
 	font-size: 0.9em;
@@ -3989,39 +4069,6 @@ body.modal-open {
 	margin-bottom: 1.5em;
 	text-align: left;
 	font-style: italic;
-}
-
-.menu-category-icons {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(160px, max-content));
-	gap: 0.7em;
-	align-items: center;
-	margin-top: -0.2em;
-	margin-bottom: 0.7em;
-	font-style: normal;
-}
-
-.menu-format-item {
-	text-align: left;
-}
-
-.menu-format-label {
-	font-size: 0.9em;
-	letter-spacing: 0.03em;
-	margin-bottom: 0.25em;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 0.35em;
-	white-space: nowrap;
-}
-
-.menu-format-label img {
-	width: 30px;
-	height: 30px;
-	display: inline-block;
-	object-fit: contain;
-	vertical-align: middle;
 }
 
 .menu-item {
@@ -6514,6 +6561,30 @@ body.modal-open {
 	}
 }
 
+@media (max-width: 768px) {
+	.simple-menu {
+		padding: 0 1em;
+	}
+
+	.rolls-special-badge,
+	.snacks-special-badge {
+		float: none;
+		margin: 0 auto 1em;
+	}
+
+	.rolls-special-badge {
+		float: right;
+		width: min(100%, 150px);
+		margin: 0.1em 0 0.9em 0.9em;
+	}
+
+	.snacks-special-badge {
+		float: right;
+		width: min(100%, 113px);
+		margin: -3.15em 0 0.9em 0.9em;
+	}
+}
+
 /* Extra Small Phones */
 @media (max-width: 360px) {
 	#header h1 {
@@ -6550,13 +6621,23 @@ body.modal-open {
 		margin: 0 auto 1em;
 	}
 
-	.menu-category-icons {
-		grid-template-columns: 1fr;
-		gap: 0.9em;
+	.snacks-special-badge {
+		float: right;
+		width: min(100%, 113px);
+		margin: -2.85em 0 0.9em 0.7em;
 	}
 
-	.menu-format-item {
-		text-align: left;
+	.menu-piece-top {
+		font-size: 1em;
+	}
+
+	.menu-piece-lines {
+		grid-template-columns: 1fr;
+		row-gap: 0.35em;
+	}
+
+	.menu-piece-separator {
+		display: none;
 	}
 
 	.menu-category {
