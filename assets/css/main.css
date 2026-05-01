@@ -6564,6 +6564,24 @@ body.modal-open {
 @media (max-width: 768px) {
 	.simple-menu {
 		padding: 0 1em;
+		box-sizing: border-box;
+	}
+
+	.menu-content-box {
+		box-sizing: border-box;
+	}
+
+	.menu-piece-lines {
+		grid-template-columns: 1fr;
+		row-gap: 0.35em;
+	}
+
+	.menu-piece-separator {
+		display: none;
+	}
+
+	.menu-piece-top {
+		font-size: 1em !important;
 	}
 
 	.rolls-special-badge,
