@@ -6562,8 +6562,31 @@ body.modal-open {
 }
 
 @media (max-width: 768px) {
+	.menu-page .menu-background-wrap {
+		width: 100%;
+		max-width: 980px;
+		padding: 1.25em 0.85em;
+		box-sizing: border-box;
+		margin: 0 auto;
+	}
+
+	.menu-page .menu-content-box {
+		width: 100%;
+		max-width: 840px;
+		padding: 1.2em 0.6em;
+		box-sizing: border-box;
+		margin: 0 auto;
+	}
+
 	.simple-menu {
 		padding: 0 1em;
+		box-sizing: border-box;
+	}
+
+	.menu-page .simple-menu {
+		width: 100%;
+		padding: 0 0.75em;
+		margin: 0 auto;
 		box-sizing: border-box;
 	}
 
