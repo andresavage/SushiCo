@@ -84,10 +84,6 @@
 					<div class="menu-section">
 						<div class="schedule-header">
 							<h2 class="menu-category">UPCOMING APPEARANCES</h2>
-							<div class="schedule-view-toggle" role="tablist" aria-label="View mode">
-								<button type="button" class="schedule-tab" data-view="list" aria-selected="false">List</button>
-								<button type="button" class="schedule-tab active" data-view="calendar" aria-selected="true">Calendar</button>
-							</div>
 						</div>
 						<div id="schedule-list" class="schedule-view schedule-view-list" hidden></div>
 						<div id="schedule-calendar" class="schedule-view schedule-view-calendar active"></div>
@@ -540,23 +536,21 @@
 					renderList(upcoming, listContainer);
 					renderCalendar(upcoming, calContainer);
 
-					document.querySelectorAll('.schedule-tab').forEach(function(btn) {
-						btn.addEventListener('click', function() {
-							var view = this.getAttribute('data-view');
-							document.querySelectorAll('.schedule-tab').forEach(function(b) {
-								b.classList.toggle('active', b.getAttribute('data-view') === view);
-								b.setAttribute('aria-selected', b.getAttribute('data-view') === view ? 'true' : 'false');
-							});
-							listContainer.classList.toggle('active', view === 'list');
-							calContainer.classList.toggle('active', view === 'calendar');
-							listContainer.hidden = view !== 'list';
-							calContainer.hidden = view !== 'calendar';
-						});
+					function applyView(view) {
+						listContainer.classList.toggle('active', view === 'list');
+						calContainer.classList.toggle('active', view === 'calendar');
+						listContainer.hidden = view !== 'list';
+						calContainer.hidden = view !== 'calendar';
+					}
+
+					function getAutoView() {
+						return window.matchMedia('(max-width: 1024px)').matches ? 'list' : 'calendar';
+					}
+
+					applyView(getAutoView());
+					window.addEventListener('resize', function() {
+						applyView(getAutoView());
 					});
-					listContainer.hidden = true;
-					listContainer.classList.remove('active');
-					calContainer.hidden = false;
-					calContainer.classList.add('active');
 				}
 
 				if (document.readyState === 'loading') {

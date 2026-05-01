@@ -3301,6 +3301,74 @@ body {
 	text-shadow: none !important;
 }
 
+/* Upcoming schedule ticker beneath nav */
+.schedule-ticker {
+	display: flex;
+	align-items: center;
+	gap: 0.8em;
+	padding: 0.55em 1.1em;
+	border-top: 2px solid var(--vintage-black);
+	border-bottom: 2px solid var(--vintage-black);
+	background: linear-gradient(to right, #f8ead2, #f2ddbf);
+	overflow: hidden;
+}
+
+.schedule-ticker-label {
+	flex: 0 0 auto;
+	font-family: 'Nitti Regular', sans-serif;
+	font-size: 0.78rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	padding: 0.3em 0.6em;
+	border: 2px solid var(--vintage-black);
+	background: var(--vintage-red);
+	color: var(--vintage-white);
+}
+
+.schedule-ticker-viewport {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.schedule-ticker-track {
+	display: inline-flex;
+	white-space: nowrap;
+	will-change: transform;
+	animation: ticker-scroll 34s linear infinite;
+}
+
+.schedule-ticker-content {
+	display: inline-block;
+	padding-right: 2.5em;
+	font-family: 'Nitti Regular', sans-serif;
+	font-size: 0.88rem;
+	font-weight: 600;
+	color: var(--vintage-black);
+	letter-spacing: 0.02em;
+}
+
+@keyframes ticker-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 736px) {
+	.schedule-ticker {
+		padding: 0.45em 0.75em;
+	}
+
+	.schedule-ticker-label {
+		font-size: 0.68rem;
+		padding: 0.22em 0.5em;
+	}
+
+	.schedule-ticker-content {
+		font-size: 0.76rem;
+	}
+}
+
 /* Mobile nav: hamburger hidden on desktop */
 .nav-toggle {
 	display: none;
@@ -3475,6 +3543,20 @@ table td strong {
 	text-decoration: none !important;
 	border-radius: 0 !important;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+	display: inline-flex !important;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.2em;
+}
+
+.floating-button-icon {
+	font-size: 1.1em;
+	line-height: 1;
+}
+
+.floating-button-label {
+	line-height: 1;
 }
 
 .floating-button:hover {
@@ -4783,10 +4865,16 @@ body.modal-open {
 	width: 100%;
 }
 
+.primary-cta-section.single-cta {
+	grid-template-columns: minmax(300px, 760px);
+	justify-content: center;
+	max-width: 900px;
+}
+
 .primary-cta-box {
 	background: linear-gradient(to bottom, var(--vintage-white), var(--vintage-cream));
 	border: 4px solid var(--vintage-black);
-	padding: 2em 1.5em;
+	padding: 1.4em 1.1em;
 	box-shadow: 
 		8px 8px 0 rgba(0, 0, 0, 0.15),
 		inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -4796,6 +4884,22 @@ body.modal-open {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+}
+
+.primary-cta-section.single-cta .primary-cta-box {
+	padding: 2em 1.8em;
+	box-shadow:
+		10px 10px 0 rgba(0, 0, 0, 0.16),
+		inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.primary-cta-section.single-cta .primary-cta-heading {
+	font-size: 1.9em !important;
+}
+
+.primary-cta-section.single-cta .primary-cta-text {
+	font-size: 1.05em !important;
+	line-height: 1.6 !important;
 }
 
 .primary-cta-box::before {
@@ -4834,19 +4938,19 @@ body.modal-open {
 }
 
 .cta-icon {
-	font-size: 3em;
-	margin-bottom: 0.5em;
+	font-size: 2.4em;
+	margin-bottom: 0.35em;
 	position: relative;
 	z-index: 1;
 }
 
 .primary-cta-heading {
 	font-family: 'Nitti Regular', sans-serif !important;
-	font-size: 2.2em !important;
+	font-size: 1.7em !important;
 	color: var(--vintage-black) !important;
 	text-transform: uppercase !important;
 	letter-spacing: 0.12em !important;
-	margin-bottom: 1em !important;
+	margin-bottom: 0.65em !important;
 	position: relative;
 	z-index: 1;
 	font-weight: 700 !important;
@@ -4854,9 +4958,9 @@ body.modal-open {
 
 .primary-cta-text {
 	font-family: 'Nitti Regular', sans-serif !important;
-	font-size: 1.1em !important;
+	font-size: 0.98em !important;
 	color: var(--vintage-black) !important;
-	line-height: 1.7 !important;
+	line-height: 1.55 !important;
 	margin-bottom: 0 !important;
 	flex: 1;
 	position: relative;
@@ -5152,13 +5256,17 @@ body.modal-open {
 		gap: 2em;
 		padding: 0 1em;
 	}
+
+	.primary-cta-section.single-cta {
+		max-width: 100%;
+	}
 	
 	.primary-cta-box {
-		padding: 2.5em 2em;
+		padding: 1.6em 1.2em;
 	}
 	
 	.primary-cta-heading {
-		font-size: 1.8em !important;
+		font-size: 1.45em !important;
 	}
 	
 	.showcase-gallery {
