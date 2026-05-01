@@ -87,10 +87,19 @@
 			}, 100);
 		});
 
-	// Upcoming appearances ticker beneath nav.
+	// Upcoming appearances ticker (all pages).
 		(function() {
-			var nav = document.getElementById('nav');
-			if (!nav) return;
+			var bodyEl = document.body;
+			var mount = document.getElementById('schedule-ticker-mount');
+			function setTickerState(isVisible) {
+				bodyEl.classList.toggle('has-ticker', !!isVisible);
+				bodyEl.classList.toggle('no-ticker', !isVisible);
+			}
+			if (!mount) {
+				setTickerState(false);
+				return;
+			}
+			setTickerState(false);
 
 			var monthMap = {
 				january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
@@ -112,28 +121,29 @@
 				return d;
 			}
 
-			function createTicker(items) {
+			function renderTicker(items) {
 				if (!items || !items.length) return;
-				var ticker = document.createElement('div');
-				ticker.className = 'schedule-ticker';
-				ticker.innerHTML =
-					'<div class="schedule-ticker-label">Upcoming</div>' +
-					'<div class="schedule-ticker-viewport">' +
-						'<div class="schedule-ticker-track">' +
-							'<span class="schedule-ticker-content"></span>' +
-							'<span class="schedule-ticker-content" aria-hidden="true"></span>' +
+				mount.innerHTML =
+					'<div class="schedule-ticker">' +
+						'<div class="schedule-ticker-label">Upcoming</div>' +
+						'<div class="schedule-ticker-viewport">' +
+							'<div class="schedule-ticker-track">' +
+								'<span class="schedule-ticker-content"></span>' +
+								'<span class="schedule-ticker-content" aria-hidden="true"></span>' +
+							'</div>' +
 						'</div>' +
 					'</div>';
 
-				var text = items.join('  \u2726  ');
-				var contentEls = ticker.querySelectorAll('.schedule-ticker-content');
-				for (var i = 0; i < contentEls.length; i++) {
-					contentEls[i].textContent = text + '  \u2726  ';
+				var divider = '   \u2726 \u2726   ';
+				var text = items.join(divider);
+				var blocks = mount.querySelectorAll('.schedule-ticker-content');
+				for (var i = 0; i < blocks.length; i++) {
+					blocks[i].textContent = text + divider;
 				}
-				nav.insertAdjacentElement('afterend', ticker);
+				setTickerState(true);
 			}
 
-			fetch('schedule.json?v=20260501', { cache: 'no-store' })
+			fetch('schedule.json?v=20260501-4', { cache: 'no-store' })
 				.then(function(resp) {
 					if (!resp.ok) throw new Error('schedule fetch failed');
 					return resp.json();
@@ -150,19 +160,23 @@
 						return parseDate(a.date) - parseDate(b.date);
 					}).slice(0, 5);
 
-					if (!upcoming.length) return;
+					if (!upcoming.length) {
+						mount.innerHTML = '';
+						setTickerState(false);
+						return;
+					}
 
-					var items = upcoming.map(function(e) {
+					renderTicker(upcoming.map(function(e) {
 						var parts = [];
 						if (e.date) parts.push(e.date);
 						if (e.venue) parts.push(e.venue);
 						if (e.time) parts.push(e.time);
 						return parts.join(' - ');
-					});
-					createTicker(items);
+					}));
 				})
 				.catch(function() {
-					// Keep hidden when schedule data is unavailable.
+					mount.innerHTML = '';
+					setTickerState(false);
 				});
 		})();
 
