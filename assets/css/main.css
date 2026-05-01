@@ -4564,7 +4564,7 @@ body.modal-open {
 	
 	#nav {
 		margin: 0 !important;
-		top: var(--ticker-height) !important;
+		top: var(--ticker-offset) !important;
 	}
 
 	#nav > ul {
@@ -4618,7 +4618,7 @@ body.modal-open {
 		flex-wrap: nowrap !important;
 		min-height: 60px !important;
 		transition: transform 0.3s ease !important;
-		top: var(--ticker-height) !important;
+		top: var(--ticker-offset) !important;
 		left: 0 !important;
 		right: 0 !important;
 		margin: 0 !important;
