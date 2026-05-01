@@ -3915,7 +3915,7 @@ body.modal-open {
 	max-width: 980px;
 	margin: 0 auto;
 	padding: 2.5em 2em;
-	background-image: url('../../menu_bg.svg');
+	background-image: url('../../images/menu_bg.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -4017,8 +4017,8 @@ body.modal-open {
 }
 
 .menu-format-label img {
-	width: 26px;
-	height: 26px;
+	width: 30px;
+	height: 30px;
 	display: inline-block;
 	object-fit: contain;
 	vertical-align: middle;
