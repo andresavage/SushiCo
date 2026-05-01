@@ -6594,19 +6594,6 @@ body.modal-open {
 		box-sizing: border-box;
 	}
 
-	.menu-piece-lines {
-		grid-template-columns: 1fr;
-		row-gap: 0.35em;
-	}
-
-	.menu-piece-separator {
-		display: none;
-	}
-
-	.menu-piece-top {
-		font-size: 1em !important;
-	}
-
 	.rolls-special-badge,
 	.snacks-special-badge {
 		float: none;
@@ -6666,19 +6653,6 @@ body.modal-open {
 		float: right;
 		width: min(100%, 113px);
 		margin: -2.85em 0 0.9em 0.7em;
-	}
-
-	.menu-piece-top {
-		font-size: 1em;
-	}
-
-	.menu-piece-lines {
-		grid-template-columns: 1fr;
-		row-gap: 0.35em;
-	}
-
-	.menu-piece-separator {
-		display: none;
 	}
 
 	.menu-category {
