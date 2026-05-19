@@ -143,7 +143,7 @@
 				setTickerState(true);
 			}
 
-			fetch('schedule.json?v=20260501-4', { cache: 'no-store' })
+			fetch('schedule.json?v=20260519-1', { cache: 'no-store' })
 				.then(function(resp) {
 					if (!resp.ok) throw new Error('schedule fetch failed');
 					return resp.json();
