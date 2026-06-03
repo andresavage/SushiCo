@@ -1,65 +1,34 @@
 {
-  "menu": [
+  "sections": [
     {
-      "category": "Rolls",
+      "type": "rolls",
+      "headers": [
+        { "label": "ROLLS", "icon": "images/chopsticks.svg", "sub": "(6 Pieces)" },
+        { "label": "HANDROLLS", "icon": "images/handroll.svg", "sub": "(1 Piece)" }
+      ],
+      "badge": { "src": "images/3_for_20.png", "alt": "All handrolls 3 for $20 special" },
       "items": [
-        {
-          "name": "WICKED LOCAL TUNA",
-          "price": "$15",
-          "description": "SPICY MAYO, CUCUMBER, SOY GLAZE, FURIKAKE, SCALLION"
-        },
-        {
-          "name": "SHRIMP TEMPURA",
-          "price": "$14",
-          "description": "MISO-HONEY, COCONUT, AVOCADO, SRIRACHA, SCALLION"
-        },
-        {
-          "name": "ORA KING SALMON PHILLY",
-          "price": "$14",
-          "description": "CUCUMBER, AVOCADO, CREAM CHEESE, SOY GLAZE, SESAME"
-        },
-        {
-          "name": "JONAH CRAB CALI",
-          "price": "$15",
-          "description": "YUZU MAYO, CUCUMBER, AVOCADO, SOY GLAZE, FURIKAKE"
-        },
-        {
-          "name": "KARAAGE CHICKEN",
-          "price": "$15",
-          "description": "SPICY MAYO, CHILI OIL, CUCUMBER, SCALLION, FURIKAKE"
-        },
-        {
-          "name": "AVOCADO ROLL",
-          "price": "$12",
-          "description": "CUCUMBER, SOY GLAZE, SPICY MAYO, SESAME SCALLION"
-        },
-        {
-          "name": "SWEET POTATO TEMPURA",
-          "price": "$12",
-          "description": "SOY GLAZE, SPICY MAYO, AVOCADO, SCALLION, SESAME"
-        }
+        { "name": "Wicked Tuna", "price": "$16 / $8", "description": "Spicy Mayo, Cucumber, Mango, Furikake, Scallion" },
+        { "name": "Shrimp Tempura", "price": "$14 / $7", "description": "Miso-Honey, Coconut, Avocado, Sriracha, Scallion" },
+        { "name": "Blue Crab Cali", "price": "$14 / $7", "description": "Yuzu Mayo, Cucumber, Avocado, Soy Glaze, Furikake" },
+        { "name": "Bluefish Philly", "price": "$14 / $7", "description": "Smoked Bluefish, Cream Cheese, Cucumber, Soy Glaze" },
+        { "name": "Karaage Chicken", "price": "$15 / $7", "description": "Spicy Mayo, Chili Oil, Cucumber, Scallion, Furikake" },
+        { "name": "Avocado Roll", "price": "$12 / $6", "description": "Cucumber, Soy Glaze, Spicy Mayo, Sesame, Scallion" }
       ]
     },
     {
-      "category": "Snacks",
+      "type": "simple",
+      "title": "SNACKS",
+      "badge": { "src": "images/snacks.svg", "alt": "" },
       "items": [
-        {
-          "name": "CUCUMBER SALAD",
-          "price": "$8",
-          "description": "NAPA CABBAGE, SCALLION, CHILI OIL VINAIGRETTE, SESAME"
-        },
-        {
-          "name": "FURIKAKE FRIES",
-          "price": "$8",
-          "description": "SPICY MAYO, SOY GLAZE, SCALLION, BONITO FLAKES"
-        },
-        {
-          "name": "KARAAGE CHICKEN",
-          "price": "$12",
-          "description": "SPICY MAYO, CHILI OIL, LEMON, FURIKAKE SCALLION"
-        }
+        { "name": "Cucumber Salad", "price": "$8", "description": "Chili Oil Vinaigrette, Scallion, Togarashi" },
+        { "name": "Furikake Fries", "price": "$8", "description": "Spicy Mayo, Soy Glaze, Scallion, Bonito Flakes" },
+        { "name": "Karaage Chicken", "price": "$12", "description": "Spicy Mayo, Chili Oil, Scallion, Furikake, Lemon" }
       ]
     }
   ],
-  "disclaimer": "Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness."
+  "disclaimers": [
+    "*CONSUMING RAW OR UNDERCOOKED MEATS, POULTRY SEAFOOD, SHELLFISH OR EGGS MAY INCREASE YOUR RISK OF FOOD BORN ILLNESS",
+    "*WE CANNOT ACCOMMODATE PEANUT, SESAME, OR SHELLFISH ALLERGIES. WE APOLOGIZE FOR THE INCONVENIENCE."
+  ]
 }

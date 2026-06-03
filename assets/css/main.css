@@ -3377,6 +3377,10 @@ body.has-ticker #schedule-ticker-mount {
 	animation: ticker-scroll 34s linear infinite;
 }
 
+.schedule-ticker:hover .schedule-ticker-track {
+	animation-play-state: paused;
+}
+
 .schedule-ticker-content {
 	display: inline-block;
 	padding-right: 2.5em;
@@ -5270,6 +5274,27 @@ body.modal-open {
 	flex: 1;
 	position: relative;
 	z-index: 1;
+}
+
+.primary-cta-email {
+	font-family: 'Nitti Regular', sans-serif !important;
+	font-size: 0.98em !important;
+	color: var(--vintage-black) !important;
+	line-height: 1.55 !important;
+	margin: 0.9em 0 0 !important;
+	position: relative;
+	z-index: 1;
+}
+
+.primary-cta-email a {
+	color: var(--vintage-red) !important;
+	font-weight: 700 !important;
+	text-decoration: none !important;
+	border-bottom: 1px solid currentColor;
+}
+
+.primary-cta-email a:hover {
+	color: var(--vintage-black) !important;
 }
 
 .primary-cta-button {

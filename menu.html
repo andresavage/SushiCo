@@ -39,92 +39,21 @@
 							<div class="menu-top-logo">
 								<img src="sushi-logos/NWPSC_Square-01.png?v=20260501-2" alt="Newport Sushi Co logo">
 							</div>
-							<div class="simple-menu">
-								<div class="menu-section menu-section-rolls">
-									<div class="menu-piece-lines">
-										<div class="menu-piece-line">
-											<div class="menu-piece-top menu-category">ROLLS <img src="images/chopsticks.svg" alt="" aria-hidden="true"></div>
-											<div class="menu-piece-sub">(6 Pieces)</div>
-										</div>
-										<div class="menu-piece-separator" aria-hidden="true">/</div>
-										<div class="menu-piece-line">
-											<div class="menu-piece-top menu-category">HANDROLLS <img src="images/handroll.svg" alt="" aria-hidden="true"></div>
-											<div class="menu-piece-sub">(1 Piece)</div>
-										</div>
-									</div>
-									<div class="menu-category-divider" aria-hidden="true"></div>
-									<div class="rolls-special-badge">
-										<img src="images/3_for_20.png" alt="All handrolls 3 for $20 special">
-									</div>
-									
-									<div class="menu-item">
-										<div class="menu-item-name">WICKED TUNA <span class="menu-item-price">$16 / $8</span></div>
-										<div class="menu-item-description">spicy mayo, cucumber, mango, furikake, scallion</div>
-									</div>
-
-									<div class="menu-item">
-										<div class="menu-item-name">SHRIMP TEMPURA <span class="menu-item-price">$14 / $7</span></div>
-										<div class="menu-item-description">miso-honey, coconut, avocado, sriracha, scallion</div>
-									</div>
-
-									<div class="menu-item">
-										<div class="menu-item-name">JONAH CRAB CALI <span class="menu-item-price">$16 / $8</span></div>
-										<div class="menu-item-description">yuzu mayo, cucumber, avocado, soy glaze, furikake</div>
-									</div>
-
-									<div class="menu-item">
-										<div class="menu-item-name">BLUEFISH PHILLY <span class="menu-item-price">$14 / $7</span></div>
-										<div class="menu-item-description">smoked bluefish, cream cheese, cucumber, soy glaze</div>
-									</div>
-
-									<div class="menu-item">
-										<div class="menu-item-name">KARAAGE CHICKEN <span class="menu-item-price">$15 / $7</span></div>
-										<div class="menu-item-description">spicy mayo, chili oil, cucumber, scallion, furikake</div>
-									</div>
-
-									<div class="menu-item">
-										<div class="menu-item-name">AVOCADO ROLL <span class="menu-item-price">$12 / $6</span></div>
-										<div class="menu-item-description">cucumber, soy glaze, spicy mayo, sesame, scallion</div>
-									</div>
-								</div>
-
-								<div class="menu-section">
-									<h2 class="menu-category">SNACKS</h2>
-									<div class="snacks-special-badge">
-										<img src="images/snacks.svg" alt="" aria-hidden="true">
-									</div>
-									
-									<div class="menu-item">
-										<div class="menu-item-name">CUCUMBER SALAD <span class="menu-item-price">$8.00</span></div>
-										<div class="menu-item-description">chili oil vinaigrette, scallion, togarashi</div>
-									</div>
-
-									<div class="menu-item">
-										<div class="menu-item-name">FURIKAKE FRIES <span class="menu-item-price">$8.00</span></div>
-										<div class="menu-item-description">spicy mayo, soy glaze, scallion, bonito flakes</div>
-									</div>
-
-									<div class="menu-item">
-										<div class="menu-item-name">KARAAGE CHICKEN <span class="menu-item-price">$12.00</span></div>
-										<div class="menu-item-description">spicy mayo, chili oil, scallion, furikake, lemon</div>
-									</div>
-								</div>
+							<div class="simple-menu" id="menu-root">
+								<div class="menu-empty" style="text-align:center; color:#666; padding:2em 1em;">Loading menu…</div>
 							</div>
 						</div>
 					</div>
 
 					<div style="height: 40px;"></div>
 
-					<div style="text-align: center;">
-						<em>*CONSUMING RAW OR UNDERCOOKED MEATS, POULTRY SEAFOOD, SHELLFISH OR EGGS MAY INCREASE YOUR RISK OF FOOD BORN ILLNESS</em><br>
-						<em>*WE CANNOT ACCOMODATE SESAME OR SHELLFISH ALLERGIES. WE APOLOGIZE FOR THE INCONVENIENCE.</em>
-					</div>
+					<div style="text-align: center;" id="menu-disclaimer"></div>
 				</section>
 			
 			<div class="floating-buttons">
             <a href="index.html" class="floating-button">Home</a>
             <a href="schedule.html" class="floating-button">Schedule</a>
-            <a href="events.html" class="floating-button">Event Inquiries</a>
+            <a href="events.html" class="floating-button">Book Us</a>
         </div>
 	
 		<!-- Scripts -->
@@ -134,6 +63,86 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				// Menu is rendered from menu.json so items/prices can be edited in one place.
+				(function () {
+					function escapeHtml(s) {
+						return String(s == null ? '' : s)
+							.replace(/&/g, '&amp;')
+							.replace(/</g, '&lt;')
+							.replace(/>/g, '&gt;')
+							.replace(/"/g, '&quot;');
+					}
+
+					function renderItem(item) {
+						var name = escapeHtml(item.name || '');
+						var price = item.price ? ' <span class="menu-item-price">' + escapeHtml(item.price) + '</span>' : '';
+						var desc = item.description ? '<div class="menu-item-description">' + escapeHtml(item.description) + '</div>' : '';
+						return '<div class="menu-item">' +
+							'<div class="menu-item-name">' + name + price + '</div>' +
+							desc +
+						'</div>';
+					}
+
+					function renderRollsHeader(headers) {
+						var parts = [];
+						for (var i = 0; i < headers.length; i++) {
+							var h = headers[i];
+							var icon = h.icon ? ' <img src="' + escapeHtml(h.icon) + '" alt="" aria-hidden="true">' : '';
+							if (i > 0) parts.push('<div class="menu-piece-separator" aria-hidden="true">/</div>');
+							parts.push(
+								'<div class="menu-piece-line">' +
+									'<div class="menu-piece-top menu-category">' + escapeHtml(h.label || '') + icon + '</div>' +
+									(h.sub ? '<div class="menu-piece-sub">' + escapeHtml(h.sub) + '</div>' : '') +
+								'</div>'
+							);
+						}
+						return '<div class="menu-piece-lines">' + parts.join('') + '</div>' +
+							'<div class="menu-category-divider" aria-hidden="true"></div>';
+					}
+
+					function renderSection(section) {
+						var items = (section.items || []).map(renderItem).join('');
+						if (section.type === 'rolls') {
+							var header = renderRollsHeader(section.headers || []);
+							var badge = section.badge
+								? '<div class="rolls-special-badge"><img src="' + escapeHtml(section.badge.src) + '" alt="' + escapeHtml(section.badge.alt || '') + '"></div>'
+								: '';
+							return '<div class="menu-section menu-section-rolls">' + header + badge + items + '</div>';
+						}
+						var title = section.title ? '<h2 class="menu-category">' + escapeHtml(section.title) + '</h2>' : '';
+						var sBadge = section.badge
+							? '<div class="snacks-special-badge"><img src="' + escapeHtml(section.badge.src) + '" alt="' + escapeHtml(section.badge.alt || '') + '" aria-hidden="true"></div>'
+							: '';
+						return '<div class="menu-section">' + title + sBadge + items + '</div>';
+					}
+
+					function render(data) {
+						var root = document.getElementById('menu-root');
+						if (root) {
+							root.innerHTML = (data.sections || []).map(renderSection).join('');
+						}
+						var disc = document.getElementById('menu-disclaimer');
+						if (disc) {
+							disc.innerHTML = (data.disclaimers || [])
+								.map(function (d) { return '<em>' + escapeHtml(d) + '</em>'; })
+								.join('<br>');
+						}
+					}
+
+					fetch('menu.json?v=20260603-1', { cache: 'no-store' })
+						.then(function (resp) {
+							if (!resp.ok) throw new Error('menu fetch failed');
+							return resp.json();
+						})
+						.then(render)
+						.catch(function () {
+							var root = document.getElementById('menu-root');
+							if (root) root.innerHTML = '<div class="menu-empty" style="text-align:center; color:#666; padding:2em 1em;">Menu is temporarily unavailable. Please check back soon.</div>';
+						});
+				})();
+			</script>
 
 	</body>
 </html>
