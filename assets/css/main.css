@@ -3378,6 +3378,7 @@ body.has-ticker #schedule-ticker-mount {
 }
 
 .schedule-ticker:hover .schedule-ticker-track {
+	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 }
 
@@ -3890,6 +3891,50 @@ body.modal-open {
 
 .award-text:last-of-type {
 	margin-bottom: 0.6em !important;
+}
+
+.home-award {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.1em;
+	max-width: 620px;
+	margin: 1.6em auto 0;
+	padding: 0 1em;
+}
+
+.home-award-badge {
+	width: 150px;
+	height: auto;
+	flex-shrink: 0;
+	border: 2px solid var(--vintage-black);
+	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.home-award-text {
+	font-family: 'Nitti Regular', sans-serif;
+	font-size: 0.82rem;
+	line-height: 1.4;
+	color: var(--vintage-black);
+	margin: 0;
+	text-align: left;
+}
+
+.home-award-text strong {
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+@media screen and (max-width: 480px) {
+	.home-award {
+		flex-direction: column;
+		text-align: center;
+		gap: 0.6em;
+	}
+	.home-award-text {
+		text-align: center;
+		font-size: 0.78rem;
+	}
 }
 
 .award-close-button {

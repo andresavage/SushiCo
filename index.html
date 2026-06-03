@@ -7,22 +7,10 @@
         <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/main.css?v=20260603-1" />
         <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     </head>
     <body class="homepage is-preload">
-        <!-- Award Popup Modal -->
-        <div id="award-modal" class="award-modal">
-            <div class="award-modal-content">
-                <button class="award-modal-close" onclick="closeAwardModal()" aria-label="Close">×</button>
-                <img src="images/bestofnewport.png" alt="Best of Newport Award" class="award-image">
-                <h2 class="award-title">Thank You, Newport!</h2>
-                <p class="award-text">We're honored to be selected as <strong>2025 Best Food Truck in Newport County</strong> by Newport Life Magazine!</p>
-                <p class="award-text">Thank you to everyone who voted for us. We're grateful for your support!</p>
-                <button class="award-close-button" onclick="closeAwardModal()">Awesome!</button>
-            </div>
-        </div>
-
         <div id="schedule-ticker-mount"></div>
         <nav id="nav">
             <ul>
@@ -64,6 +52,11 @@
                             </div>
                         </div>
 
+                        <div class="home-award">
+                            <img src="images/bestofnewport.png" alt="Best of Newport County 2025" class="home-award-badge">
+                            <p class="home-award-text"><strong>2025 Best Food Truck</strong> in Newport County &middot; <em>Newport Life Magazine</em></p>
+                        </div>
+
             </section>
         </div>
 
@@ -73,46 +66,6 @@
             <a href="events.html" class="floating-button">Book Us</a>
         </div>
 
-        <script>
-            // Check if user has already seen the award modal
-            function hasSeenAwardModal() {
-                return localStorage.getItem('newportSushiAwardSeen') === 'true';
-            }
-
-            // Mark award modal as seen
-            function markAwardModalSeen() {
-                localStorage.setItem('newportSushiAwardSeen', 'true');
-            }
-
-            // Show award modal on page load (only if not seen before)
-            window.addEventListener('DOMContentLoaded', function() {
-                if (!hasSeenAwardModal()) {
-                    var modal = document.getElementById('award-modal');
-                    if (modal) {
-                        modal.style.display = 'flex';
-                        document.body.classList.add('modal-open');
-                    }
-                }
-            });
-
-            function closeAwardModal() {
-                var modal = document.getElementById('award-modal');
-                if (modal) {
-                    modal.style.display = 'none';
-                    document.body.classList.remove('modal-open');
-                    markAwardModalSeen();
-                }
-            }
-
-            // Close modal when clicking outside of it
-            window.addEventListener('click', function(event) {
-                var modal = document.getElementById('award-modal');
-                if (event.target === modal) {
-                    closeAwardModal();
-                }
-            });
-
-        </script>
         <script src="assets/js/jquery.min.js"></script>
             <script src="assets/js/jquery.dropotron.min.js"></script>
             <script src="assets/js/browser.min.js"></script>
