@@ -9,10 +9,9 @@
       "badge": { "src": "images/3_for_20.png", "alt": "All handrolls 3 for $20 special" },
       "items": [
         { "name": "Wicked Tuna", "price": "$16 / $8", "description": "Spicy Mayo, Cucumber, Mango, Furikake, Scallion" },
-        { "name": "Shrimp Tempura", "price": "$14 / $7", "description": "Miso-Honey, Coconut, Avocado, Sriracha, Scallion" },
-        { "name": "Blue Crab Cali", "price": "$14 / $7", "description": "Yuzu Mayo, Cucumber, Avocado, Soy Glaze, Furikake" },
         { "name": "Bluefish Philly", "price": "$14 / $7", "description": "Smoked Bluefish, Cream Cheese, Cucumber, Soy Glaze" },
-        { "name": "Karaage Chicken", "price": "$15 / $7", "description": "Spicy Mayo, Chili Oil, Cucumber, Scallion, Furikake" },
+        { "name": "Shrimp Tempura", "price": "$16 / $8", "description": "Miso-Honey, Coconut, Avocado, Sriracha, Scallion" },
+        { "name": "Blue Crab Cali", "price": "$14 / $7", "description": "Yuzu Mayo, Cucumber, Avocado, Soy Glaze, Furikake" },
         { "name": "Avocado Roll", "price": "$12 / $6", "description": "Cucumber, Soy Glaze, Spicy Mayo, Sesame, Scallion" }
       ]
     },
@@ -21,9 +20,9 @@
       "title": "SNACKS",
       "badge": { "src": "images/snacks.svg", "alt": "" },
       "items": [
-        { "name": "Cucumber Salad", "price": "$8", "description": "Chili Oil Vinaigrette, Scallion, Togarashi" },
-        { "name": "Furikake Fries", "price": "$8", "description": "Spicy Mayo, Soy Glaze, Scallion, Bonito Flakes" },
-        { "name": "Karaage Chicken", "price": "$12", "description": "Spicy Mayo, Chili Oil, Scallion, Furikake, Lemon" }
+        { "name": "Wagyu Nigiri", "price": "$25", "description": "Teriyaki, Scallion, Crispy Garlic" },
+        { "name": "Crispy Brussels", "price": "$10", "description": "Nori, Chili Oil Vinaigrette, Sesame, Scallion" },
+        { "name": "Tuna Crispy Rice", "price": "$18", "description": "Avocado, Spicy Mayo, Soy Glaze, Furikake" }
       ]
     }
   ],
